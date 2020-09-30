@@ -3,8 +3,8 @@
 void
 *ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n)
 {
-	char *dst_c;
-	const char *src_c;
+	unsigned char *dst_c;
+	const unsigned char *src_c;
 
 	dst_c = dst;
 	src_c = src;
