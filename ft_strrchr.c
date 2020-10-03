@@ -2,18 +2,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char *ret_p;
+	const char *ret_p;
 
+	if (c == '\0')
+		return (NULL);
 	ret_p = NULL;
-	if (c != '\0')
+	while (*s)
 	{
-		while (*s)
-		{
-			if (*s == c)
-				ret_p = s;
-		}
-		if (ret_p)
-			return (ret_p);
+		if (*s == c)
+			ret_p = s;
+		s++;
 	}
-	return (NULL);
+	return ((char *)ret_p);
 }
