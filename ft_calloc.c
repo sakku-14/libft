@@ -2,24 +2,10 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void **ret;
-	void **ret_c;
-	size_t i;
+	void *ret;
 
-	ret = NULL;
-	ret_c = NULL;
-	i = 0;
-	if (!(ret = (void *)malloc(sizeof(void) * count)))
+	if (!(ret = (void *)malloc(count * size)))
 		return (NULL);
-	ret_c = ret;
-	while (i++ < count)
-		if (!(*ret++ = (void *)malloc(size)))
-			return (NULL);
-	ret = ret_c;
-	while (count--)
-	{
-		ft_memset(ret, 0, sizeof(ret));
-		ret++;
-	}
-	return (ret_c);
+	ft_bzero(ret, count * size);
+	return (ret);
 }
