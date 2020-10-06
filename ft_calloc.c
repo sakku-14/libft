@@ -13,7 +13,7 @@ void	*ft_calloc(size_t count, size_t size)
 		return (NULL);
 	ret_c = ret;
 	while (i++ < count)
-		if (!(*ret++ = (void *)malloc(sizeof(void) * size)))
+		if (!(*ret++ = (void *)malloc(size)))
 			return (NULL);
 	ret = ret_c;
 	while (count--)
