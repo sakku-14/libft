@@ -25,7 +25,7 @@ int		count_words(char *s, char c)
 	return (cnt);
 }
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+char	*my_strncpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int i;
 
@@ -58,7 +58,7 @@ void	set_words(char **p, char *s, char *c, int size)
 			tmp++;
 		}
 		p[i] = (char*)malloc(sizeof(char) * (wlen + 1));
-		ft_strncpy(p[i], s, wlen);
+		my_strncpy(p[i], s, wlen);
 		s += wlen;
 	}
 }

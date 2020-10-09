@@ -14,6 +14,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		ret++;
 		s++;
 	}
+	*ret = '\0';
 	while (len--)
 		ret--;
 	return (ret);
