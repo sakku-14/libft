@@ -5,11 +5,13 @@ char	*ft_strrchr(const char *s, int c)
 	const char *ret_p;
 
 	ret_p = NULL;
-	while (*s || !c)
+	while (*s)
 	{
-		if (*s == c)
+		if (*s == (char)c)
 			ret_p = s;
 		s++;
 	}
+	if (!c)
+		ret_p = s;
 	return ((char *)ret_p);
 }
