@@ -6,7 +6,5 @@ void	ft_bzero(void *s, size_t n)
 
 	ss = s;
 	while (n-- > 0 && *ss)
-	{
 		*ss++ = '\0';
-	}
 }

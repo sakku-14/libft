@@ -4,7 +4,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list *tmp_lst;
 
-	if (!new)
+	if (!lst || !new)
 		return ;
 	tmp_lst = *lst;
 	*lst = ft_lstlast(*lst);
