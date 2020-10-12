@@ -71,8 +71,9 @@ char	**ft_split(char const *str, char c)
 
 	s = (char *)str;
 	size = count_words(s, c);
-	p = (char **)malloc(sizeof(char *) * (size + 1));
+	if (!(p = (char **)malloc(sizeof(char *) * (size + 1))))
+		return (NULL);
 	set_words(p, s, &c, size);
-	p[size] = 0;
+	p[size] = NULL;
 	return (p);
 }
