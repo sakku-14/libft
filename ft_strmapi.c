@@ -3,17 +3,15 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char *ret;
-	int len;
+	size_t len;
+	size_t i;
 
 	len = ft_strlen(s);
-	if (!(ret = (char *)malloc(sizeof(char) * len + 1)))
+	i = 0;
+	if (!(ret = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	while (*s)
-	{
-		*ret = f(1, *s);
-		ret++;
-		s++;
-	}
+		*ret++ = f(i++, *s++);
 	*ret = '\0';
 	while (len--)
 		ret--;
