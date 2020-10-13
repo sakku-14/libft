@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ysakuma <ysakuma@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/13 22:50:22 by ysakuma           #+#    #+#             */
+/*   Updated: 2020/10/13 23:01:12 by ysakuma          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int check_negative(int n)
+int		check_negative(int n)
 {
-	int flag;
+	int		flag;
 
 	flag = 0;
 	if (n >= 0)
@@ -10,9 +22,9 @@ int check_negative(int n)
 	return (flag);
 }
 
-int digit_is(int n, int flag)
+int		digit_is(int n, int flag)
 {
-	int digit;
+	int		digit;
 
 	digit = 0;
 	if (n == 0)
@@ -23,11 +35,11 @@ int digit_is(int n, int flag)
 		digit++;
 	}
 	if (flag == 0)
-		return(digit + 1);
+		return (digit + 1);
 	return (digit);
 }
 
-void set_num(int flag, int digit, char *num, int n)
+void	set_num(int flag, int digit, char *num, int n)
 {
 	num[digit--] = '\0';
 	while (digit > 0)
@@ -41,11 +53,11 @@ void set_num(int flag, int digit, char *num, int n)
 		num[digit] = -(n % 10) + '0';
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	char *num;
-	int digit;
-	int flag;
+	char	*num;
+	int		digit;
+	int		flag;
 
 	if ((flag = check_negative(n)))
 		n *= -1;

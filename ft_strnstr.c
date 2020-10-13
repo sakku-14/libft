@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ysakuma <ysakuma@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/13 22:55:15 by ysakuma           #+#    #+#             */
+/*   Updated: 2020/10/13 23:20:00 by ysakuma          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	const char *hay_c;
-	const char *nee_c;
-	int len_c;
+	const	char	*hay_c;
+	const	char	*nee_c;
+	int				len_c;
 
 	if (!*needle)
 		return ((char *)haystack);
@@ -20,7 +32,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 				if (!*nee_c)
 					return ((char *)haystack);
 				if (*hay_c != *nee_c)
-					break;
+					break ;
 				hay_c++;
 				nee_c++;
 				len_c--;

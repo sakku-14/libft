@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ysakuma <ysakuma@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/13 22:54:46 by ysakuma           #+#    #+#             */
+/*   Updated: 2020/10/13 23:02:08 by ysakuma          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char *ret;
-	size_t len;
-	size_t i;
+	char	*ret;
+	size_t	len;
+	size_t	i;
 
 	len = ft_strlen(s);
 	i = 0;

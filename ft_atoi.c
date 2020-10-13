@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ysakuma <ysakuma@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/13 22:47:01 by ysakuma           #+#    #+#             */
+/*   Updated: 2020/10/13 22:47:48 by ysakuma          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_atoi(const char *str)
 {
-	long long int num;
-	int flag;
+	long	long	int	num;
+	int					flag;
 
 	num = 0;
 	flag = 0;
