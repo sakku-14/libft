@@ -32,29 +32,4 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		len--;
 	}
 	return (NULL);
-
-
-/*
-	const char *ret_p;
-	const char *check_str;
-	const char *needle_cpy;
-
-	if (!*needle)
-		return ((char *)haystack);
-	needle_cpy = needle;
-	while (*haystack && len--)
-	{
-		if ((ret_p = ft_strchr(haystack, *needle)))
-		{
-			check_str = ret_p;
-			while (*check_str++ == *needle++)
-				if (!*needle)
-					return ((char *)ret_p);
-			haystack = ret_p;
-			needle = needle_cpy;
-		}
-		haystack++;
-	}
-	return (NULL);
-*/
 }
