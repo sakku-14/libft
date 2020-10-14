@@ -6,7 +6,7 @@
 /*   By: ysakuma <ysakuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 22:47:01 by ysakuma           #+#    #+#             */
-/*   Updated: 2020/10/13 22:47:48 by ysakuma          ###   ########.fr       */
+/*   Updated: 2020/10/14 14:56:20 by ysakuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char *str)
 {
-	long	long	int	num;
-	int					flag;
+	long long int	num;
+	int				flag;
 
 	num = 0;
 	flag = 0;
@@ -29,11 +29,11 @@ int	ft_atoi(const char *str)
 		num = num * 10 + (*str - '0');
 		str++;
 	}
-	if (flag == 1 && num > 2147483648)
-		return (0);
+	if (flag == 1 && -num < LONG_MIN)
+		return ((int)LONG_MIN);
 	if (flag == 1)
 		return (-((int)num));
-	if (num > 2147483647)
-		return (-1);
+	if (num > LONG_MAX)
+		return ((int)LONG_MAX);
 	return ((int)num);
 }

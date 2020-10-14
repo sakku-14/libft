@@ -6,7 +6,7 @@
 /*   By: ysakuma <ysakuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 23:14:21 by ysakuma           #+#    #+#             */
-/*   Updated: 2020/10/13 23:17:58 by ysakuma          ###   ########.fr       */
+/*   Updated: 2020/10/14 14:39:11 by ysakuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define _LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 typedef	struct	s_list
 {

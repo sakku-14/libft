@@ -45,7 +45,17 @@ SRCNAME	=	ft_memset.c \
 			ft_putstr_fd.c \
 			ft_putendl_fd.c \
 			ft_putnbr_fd.c \
-			ft_lstnew.c \
+#			ft_lstnew.c \
+			ft_lstadd_front.c \
+			ft_lstsize.c \
+			ft_lstlast.c \
+			ft_lstadd_back.c \
+			ft_lstdelone.c \
+			ft_lstclear.c \
+			ft_lstiter.c \
+			ft_lstmap.c
+
+B_SNAME	=	ft_lstnew.c \
 			ft_lstadd_front.c \
 			ft_lstsize.c \
 			ft_lstlast.c \
@@ -57,9 +67,11 @@ SRCNAME	=	ft_memset.c \
 
 SRCS	=	${addprefix ${SRCDIR}, ${SRCNAME}}
 
+B_SRCS	=	${addprefix ${SRCDIR}, ${B_SNAME}}
+
 OBJS	=	${SRCS:.c=.o}
 
-
+B_OBJS	=	${B_SRCS:.c=.o}
 
 .c.o:
 			${CC} ${CFLAGS}	-I ${INCDIR} -c $< -o ${<:.c=.o}
@@ -69,8 +81,12 @@ ${NAME}:	${OBJS}
 
 all:		${NAME}
 
+bonus:		${B_OBJS}
+			ar	rc	${NAME}	${B_OBJS}
+
 clean:
 			${RM} ${OBJS}
+			${RM} ${B_OBJS}
 
 fclean:		clean
 			${RM} ${NAME}
