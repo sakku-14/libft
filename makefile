@@ -70,7 +70,7 @@ B_OBJS	=	${B_SRCS:.c=.o}
 .c.o:
 			${CC} ${CFLAGS}	-I ${INCDIR} -c $< -o ${<:.c=.o}
 
-${NAME}:	${OBJS}
+$(NAME):	${OBJS}
 			${AR}	${NAME}	${OBJS}
 
 all:		${NAME}

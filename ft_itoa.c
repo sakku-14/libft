@@ -6,13 +6,13 @@
 /*   By: ysakuma <ysakuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 22:50:22 by ysakuma           #+#    #+#             */
-/*   Updated: 2020/10/13 23:01:12 by ysakuma          ###   ########.fr       */
+/*   Updated: 2020/10/15 15:11:44 by ysakuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		check_negative(int n)
+static int	check_negative(int n)
 {
 	int		flag;
 
@@ -22,7 +22,7 @@ int		check_negative(int n)
 	return (flag);
 }
 
-int		digit_is(int n, int flag)
+static int	digit_is(int n, int flag)
 {
 	int		digit;
 
@@ -39,7 +39,7 @@ int		digit_is(int n, int flag)
 	return (digit);
 }
 
-void	set_num(int flag, int digit, char *num, int n)
+static void	set_num(int flag, int digit, char *num, int n)
 {
 	num[digit--] = '\0';
 	while (digit > 0)

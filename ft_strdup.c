@@ -6,7 +6,7 @@
 /*   By: ysakuma <ysakuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 22:53:41 by ysakuma           #+#    #+#             */
-/*   Updated: 2020/10/13 22:53:53 by ysakuma          ###   ########.fr       */
+/*   Updated: 2020/10/15 14:49:25 by ysakuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strdup(const char *s1)
 	char *ret_str;
 	char *tmp;
 
-	if (!(ret_str = (char *)malloc(sizeof(char) * ft_strlen(s1) + 1)))
+	if (!(ret_str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1))))
 		return (NULL);
 	tmp = ret_str;
 	while (*s1)

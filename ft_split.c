@@ -6,7 +6,7 @@
 /*   By: ysakuma <ysakuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 22:53:10 by ysakuma           #+#    #+#             */
-/*   Updated: 2020/10/14 21:57:08 by ysakuma          ###   ########.fr       */
+/*   Updated: 2020/10/15 15:09:39 by ysakuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ char			**ft_split(char const *str, char c)
 	char	*s;
 	int		size;
 
+	if (!str)
+		return (NULL);
 	s = (char *)str;
 	size = count_words(s, c);
 	if (!(p = (char **)malloc(sizeof(char *) * (size + 1))))

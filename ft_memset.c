@@ -6,7 +6,7 @@
 /*   By: ysakuma <ysakuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 22:52:16 by ysakuma           #+#    #+#             */
-/*   Updated: 2020/10/13 22:52:17 by ysakuma          ###   ########.fr       */
+/*   Updated: 2020/10/15 13:39:43 by ysakuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	char *bb;
+	unsigned char *bb;
 
-	bb = (char*)b;
+	bb = (unsigned char*)b;
 	while (len--)
-		*bb++ = c;
+		*bb++ = (unsigned char)c;
 	return (b);
 }

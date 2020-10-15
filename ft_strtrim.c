@@ -6,7 +6,7 @@
 /*   By: ysakuma <ysakuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 22:55:36 by ysakuma           #+#    #+#             */
-/*   Updated: 2020/10/13 23:01:53 by ysakuma          ###   ########.fr       */
+/*   Updated: 2020/10/15 15:07:28 by ysakuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	k = 0;
 	j = ft_strlen(s1);
-	while ((ft_strchr(set, s1[i]) != NULL) && i < j)
+	while (i < j && (ft_strchr(set, s1[i]) != NULL))
 		i++;
-	while ((ft_strchr(set, s1[j]) != NULL) && j > 0)
+	while (j > 0 && (ft_strchr(set, s1[j]) != NULL))
 		j--;
 	if (j == 0)
 		len = 0;
