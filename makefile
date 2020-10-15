@@ -82,7 +82,7 @@ clean:
 			${RM} ${OBJS} ${B_OBJS}
 
 fclean:		clean
-			${RM} ${NAME} ${B_NAME}
+			${RM} ${NAME}
 
 re:			fclean all
 
