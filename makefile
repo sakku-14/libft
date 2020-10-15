@@ -4,6 +4,8 @@ CC	= gcc
 
 CFLAGS	= -Wall	-Wextra	-Werror
 
+AR		=	ar rc
+
 RM		=	rm -f
 
 INCDIR	=	./
@@ -45,17 +47,9 @@ SRCNAME	=	ft_memset.c \
 			ft_putstr_fd.c \
 			ft_putendl_fd.c \
 			ft_putnbr_fd.c \
-#			ft_lstnew.c \
-			ft_lstadd_front.c \
-			ft_lstsize.c \
-			ft_lstlast.c \
-			ft_lstadd_back.c \
-			ft_lstdelone.c \
-			ft_lstclear.c \
-			ft_lstiter.c \
-			ft_lstmap.c
 
-B_SNAME	=	ft_lstnew.c \
+B_SNAME	=	${SRCNAME} \
+			ft_lstnew.c \
 			ft_lstadd_front.c \
 			ft_lstsize.c \
 			ft_lstlast.c \
@@ -77,20 +71,19 @@ B_OBJS	=	${B_SRCS:.c=.o}
 			${CC} ${CFLAGS}	-I ${INCDIR} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
-			ar	rc	${NAME}	${OBJS}
+			${AR}	${NAME}	${OBJS}
 
 all:		${NAME}
 
 bonus:		${B_OBJS}
-			ar	rc	${NAME}	${B_OBJS}
+			${AR}	${NAME}	${B_OBJS}
 
 clean:
-			${RM} ${OBJS}
-			${RM} ${B_OBJS}
+			${RM} ${OBJS} ${B_OBJS}
 
 fclean:		clean
-			${RM} ${NAME}
+			${RM} ${NAME} ${B_NAME}
 
-re:			fclean all
+re:			fclean all bonus
 
-.PHONY:	all clean fclean re
+.PHONY:	all bonus clean fclean re
