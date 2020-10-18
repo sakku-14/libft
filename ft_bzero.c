@@ -6,7 +6,7 @@
 /*   By: ysakuma <ysakuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 22:48:32 by ysakuma           #+#    #+#             */
-/*   Updated: 2020/10/13 22:48:35 by ysakuma          ###   ########.fr       */
+/*   Updated: 2020/10/18 08:51:44 by ysakuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char *ss;
+	unsigned char *ss;
 
-	ss = s;
-	while (n-- > 0 && *ss)
+	ss = (unsigned char *)s;
+	while (n-- > 0)
 		*ss++ = '\0';
 }
