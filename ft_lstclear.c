@@ -6,7 +6,7 @@
 /*   By: ysakuma <ysakuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 22:50:55 by ysakuma           #+#    #+#             */
-/*   Updated: 2020/10/14 13:43:18 by ysakuma          ###   ########.fr       */
+/*   Updated: 2020/10/19 18:45:52 by ysakuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	if (!*lst || !del)
+	t_list *tmp;
+
+	if (!lst || !del)
 		return ;
 	while (*lst)
 	{
+		tmp = (*lst)->next;
 		ft_lstdelone(*lst, del);
-		*lst = (*lst)->next;
+		*lst = tmp;
 	}
-	lst = NULL;
-	free(lst);
 }
