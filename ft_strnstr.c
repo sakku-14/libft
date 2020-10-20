@@ -6,7 +6,7 @@
 /*   By: ysakuma <ysakuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 22:55:15 by ysakuma           #+#    #+#             */
-/*   Updated: 2020/10/19 19:42:24 by ysakuma          ###   ########.fr       */
+/*   Updated: 2020/10/20 17:56:45 by ysakuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,29 @@
 
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	if (*needle == '\0')
+	size_t i;
+	size_t j;
+
+	i = 0;
+	if (!*needle)
 		return ((char *)haystack);
-	if (*haystack == '\0' || len < 1)
-		return (NULL);
-	while (ft_strlen(needle) > len
-		|| ft_strncmp(haystack, needle, ft_strlen(needle)) != 0)
+	while (haystack[i] && i < len)
 	{
-		while (*haystack != *needle)
+		j = 0;
+		if (haystack[i] == needle[j])
 		{
-			if (*haystack++ == '\0' || len-- < 1)
-				return (NULL);
+			while (needle[j] && i + j < len)
+			{
+				if (haystack[i + j] == needle[j])
+				{
+					if (!needle[++j])
+						return ((char *)haystack + i);
+				}
+				else
+					break ;
+			}
 		}
-		if (ft_strlen(needle) > len)
-			return (NULL);
-		if (ft_strncmp(haystack, needle, ft_strlen(needle)) != 0)
-		{
-			if (*haystack++ == '\0' || len-- < 1)
-				return (NULL);
-		}
+		i++;
 	}
-	return ((char *)haystack);
+	return (NULL);
 }
