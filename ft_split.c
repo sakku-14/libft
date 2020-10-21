@@ -6,7 +6,7 @@
 /*   By: ysakuma <ysakuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 22:53:10 by ysakuma           #+#    #+#             */
-/*   Updated: 2020/10/15 15:09:39 by ysakuma          ###   ########.fr       */
+/*   Updated: 2020/10/21 22:31:22 by ysakuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static	int		set_words(char **p, char *s, char *c, int size)
 			wlen++;
 			tmp++;
 		}
-		if (!(p[i] = (char*)malloc(sizeof(char) * (wlen + 1))))
+		if (!(p[i] = malloc(sizeof(char) * (wlen + 1))))
 			return (free_strs(p, i));
 		my_strncpy(p[i], s, wlen);
 		s += wlen;
@@ -88,7 +88,7 @@ char			**ft_split(char const *str, char c)
 		return (NULL);
 	s = (char *)str;
 	size = count_words(s, c);
-	if (!(p = (char **)malloc(sizeof(char *) * (size + 1))))
+	if (!(p = malloc(sizeof(char *) * (size + 1))))
 		return (NULL);
 	if (!(set_words(p, s, &c, size)))
 		return (NULL);

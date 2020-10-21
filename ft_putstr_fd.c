@@ -6,7 +6,7 @@
 /*   By: ysakuma <ysakuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 22:52:59 by ysakuma           #+#    #+#             */
-/*   Updated: 2020/10/13 23:20:12 by ysakuma          ###   ########.fr       */
+/*   Updated: 2020/10/21 22:20:34 by ysakuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,5 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	while (*s)
-	{
-		write(fd, s++, 1);
-	}
+	write(fd, s, ft_strlen(s));
 }

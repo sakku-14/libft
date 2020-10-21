@@ -6,7 +6,7 @@
 /*   By: ysakuma <ysakuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 22:55:36 by ysakuma           #+#    #+#             */
-/*   Updated: 2020/10/15 15:07:28 by ysakuma          ###   ########.fr       */
+/*   Updated: 2020/10/21 22:28:42 by ysakuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 		len = 0;
 	else
 		len = j - i + 1;
-	if (!(ret = (char *)malloc(sizeof(char) * (len + 1))))
+	if (!(ret = malloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	ret[0] = '\0';
 	while (i <= j)
 		ret[k++] = s1[i++];
 	ret[k] = '\0';

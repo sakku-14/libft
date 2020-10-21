@@ -6,7 +6,7 @@
 /*   By: ysakuma <ysakuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 22:52:37 by ysakuma           #+#    #+#             */
-/*   Updated: 2020/10/13 23:03:09 by ysakuma          ###   ########.fr       */
+/*   Updated: 2020/10/21 22:21:31 by ysakuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	while (*s)
-		write(fd, s++, 1);
+	write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);
 }

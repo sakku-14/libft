@@ -6,13 +6,13 @@
 /*   By: ysakuma <ysakuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 22:50:22 by ysakuma           #+#    #+#             */
-/*   Updated: 2020/10/15 16:08:20 by ysakuma          ###   ########.fr       */
+/*   Updated: 2020/10/21 22:30:09 by ysakuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	check_negative(int n)
+static int	check_positive(int n)
 {
 	int		flag;
 
@@ -59,10 +59,10 @@ char		*ft_itoa(int n)
 	int		digit;
 	int		flag;
 
-	if ((flag = check_negative(n)))
+	if ((flag = check_positive(n)))
 		n *= -1;
 	digit = digit_is(n, flag);
-	if (!(num = (char *)malloc(sizeof(char) * (digit + 1))))
+	if (!(num = malloc(sizeof(char) * (digit + 1))))
 		return (NULL);
 	set_num(flag, digit, num, n);
 	return (num);
