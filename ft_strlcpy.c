@@ -6,7 +6,7 @@
 /*   By: ysakuma <ysakuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 22:54:28 by ysakuma           #+#    #+#             */
-/*   Updated: 2020/10/15 14:03:49 by ysakuma          ###   ########.fr       */
+/*   Updated: 2020/11/04 12:21:33 by ysakuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	char	*src_c;
-	int		len;
+	char		*src_c;
+	size_t		len;
 
 	src_c = (char *)src;
 	len = ft_strlen(src);
