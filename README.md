@@ -28,6 +28,8 @@ make fclean
 ```
 
 ## Note
+These functions below are faithfully reproduced.
+• memset • bzero • memcpy • memccpy • memmove • memchr • memcmp • strlen • strlcpy • strlcat • strchr • strrchr • strnstr • strncmp • atoi • isalpha • isdigit • isalnum • isascii • isprint • toupper • tolower • calloc • strdup
 
 ## Author
 - Yuki Sakuma
