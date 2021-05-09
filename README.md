@@ -34,14 +34,6 @@ These following functions are faithfully reproduced by manual.
 
 These following functions are built according to the specification.
 
-| function name |  |
-| ---- | ---- |
-| Prototype |  |
-| Parameters |  |
-| Return value |  |
-| External functs |  |
-| Description |  |
-
 | function name | ft_substr |
 | ---- | ---- |
 | Prototype | char *ft_substr(char const *s, unsigned int start, size_t len); |
